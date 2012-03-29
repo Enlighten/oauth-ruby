@@ -18,8 +18,8 @@ module OAuth::RequestProxy
       if options[:clobber_request]
         options[:parameters] || {}
       else
-        params = request.put? ? {} : request_params.merge(query_params)
-        params.merge(header_params).merge(options[:parameters] || {})
+        params = request_params.merge(query_params).merge(header_params)
+        params.merge(options[:parameters] || {})
       end
     end
 
